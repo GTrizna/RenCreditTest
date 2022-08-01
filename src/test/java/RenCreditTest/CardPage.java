@@ -1,5 +1,6 @@
 package RenCreditTest;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,5 +18,6 @@ public class CardPage {
     @FindBy (xpath = "/html/body/div/div[2]/article/div/footer/a[1]")
     private WebElement drawUpCardBtn;
 
+    @Step("Нажатие на кнопку \"Оформить карту\"")
     public void clickOnDrawUpCardBtn() {drawUpCardBtn.click();};
 }

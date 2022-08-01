@@ -1,6 +1,7 @@
 package RenCreditTest;
 
-import org.jetbrains.annotations.NotNull;
+
+import io.qameta.allure.Step;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -67,68 +68,85 @@ public class DrawUpCreditPage {
     @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[3]/form[1]/div/div[9]/label/input")
     private WebElement personalDataCheckBox;
 
-    public void fillSumField(@NotNull Integer sum) {
+    @Step("Заполнение поля суммы кредита значением {sum}")
+    public void fillSumField(Integer sum) {
         sumField.clear();
         sumField.sendKeys(sum.toString());
     }
 
-    public void slideDurationRight(@NotNull Integer amount) {
+    @Step("Перемещение ползунка срока кредита вправо на данное число шагов: {amount}")
+    public void slideDurationRight(Integer amount) {
         for (int i =0; i<amount; i++) {
             durationSlider.sendKeys(Keys.ARROW_RIGHT);
         }
     }
 
+    @Step("Открытие выпадающий список целей кредита")
     public void openPurposeList() { purposeDropList.click();}
 
+    @Step("Выбор цель кредита \"Покупка авто (новые, б/у)\"")
     public void chooseCarPurpose() { purposeCar.click(); }
 
+    @Step("Заполнение поля фамилии значением {surname}")
     public void fillSurname(String surname) {
         surnameField.clear();
         surnameField.sendKeys(surname);
     }
 
+    @Step("Заполнение поля имени значением {name}")
     public void fillName(String name) {
         nameField.clear();
         nameField.sendKeys(name);
         nameField.sendKeys(Keys.ENTER);
     }
 
+    @Step("Установка чекбокса \"Нет отчества\"")
     public void togglePatronymic() { js.executeScript("arguments[0].click();",noPatronymicCheckBox); }
 
+    @Step("Установка мужского пола")
     public void setMale() { maleRadio.click(); }
 
+    @Step("Заполнения поля даты рождения значением {date}")
     public void fillBirthDate(String date) { birthDateField.sendKeys(date); }
 
+    @Step("Заполнение номера телефона значением {number}")
     public void fillPhoneNumber(String number) {
         phoneNumberField.clear();
         phoneNumberField.sendKeys(number);
     }
 
+    @Step("Заполнение поля электронной почты значением {mail}")
     public void fillMail(String mail) {
         mailField.clear();
         mailField.sendKeys(mail);
     }
 
+    @Step("Заполнение поля серии и номера паспорта значением {number}")
     public void fillPassportNumber(String number) {
         passportNumber.clear();
         passportNumber.sendKeys(number);
     }
 
+    @Step("Заполнение поля даты выдачи паспорта значением {date}")
     public void fillPassportDate(String date) {
         passportDate.clear();
         passportDate.sendKeys(date);
     }
 
-    public void fillMainIncome(@NotNull Integer income) {
+    @Step("Заполнение поля размера основного дохода значением {income}")
+    public void fillMainIncome(Integer income) {
         mainIncome.clear();
         mainIncome.sendKeys(income.toString());
     }
 
-    public void fillAdditionalIncome(@NotNull Integer income) {
+
+    @Step("Заполнение поля размера дополнительного дохода значением {income}")
+    public void fillAdditionalIncome(Integer income) {
         additionalIncome.clear();
         additionalIncome.sendKeys(income.toString());
     }
 
+    @Step("Установка чекбокса \"Согласен на предоставление и получение информации\"")
     public void togglePersonalDataBox() { js.executeScript("arguments[0].click();",personalDataCheckBox); }
 
 }

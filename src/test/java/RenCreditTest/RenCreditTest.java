@@ -1,13 +1,13 @@
 package RenCreditTest;
 
+import io.qameta.allure.Feature;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-
 import java.time.Duration;
-
+@Feature("Тестовое задание")
 public class RenCreditTest {
 
     private static WebDriver driver;
@@ -38,7 +38,7 @@ public class RenCreditTest {
 
     }
 
-    @Test
+    @Test (description = "Тест страницы оформления дебетовой карты")
     public void startCardTest() {
 
         driver.get("https://rencredit.ru/");
@@ -64,7 +64,7 @@ public class RenCreditTest {
 
     }
 
-    @Test
+    @Test(description = "Тест страницы оформления кредита")
     public void startCreditTest() {
 
         driver.get("https://rencredit.ru/");
