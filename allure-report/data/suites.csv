@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Aug 01 23:02:47 MSK 2022","Mon Aug 01 23:02:52 MSK 2022","4865","Surefire suite","Surefire test","RenCreditTest.RenCreditTest","RenCreditTest.RenCreditTest","startCardTest","Тест страницы оформления дебетовой карты",""
+"broken","Mon Aug 01 23:02:52 MSK 2022","Mon Aug 01 23:03:52 MSK 2022","59840","Surefire suite","Surefire test","RenCreditTest.RenCreditTest","RenCreditTest.RenCreditTest","startCreditTest","Тест страницы оформления кредита",""
